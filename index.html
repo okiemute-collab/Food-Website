@@ -31,9 +31,9 @@
         <div class="container">
             <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
                 <div class="top-contact d-flex flex-wrap">
-                    <span><i class="fas fa-phone-alt"></i>+1 (800) 123-4567</span>
-                    <span><i class="fas fa-envelope"></i>hello@sarabfood.com</span>
-                    <span><i class="fas fa-map-marker-alt"></i>42 Flavor Street, NY</span>
+                    <span><i class="fas fa-phone-alt"></i>08109807633</span>
+                    <span><i class="fas fa-envelope"></i>okiemutejoel2@gmail.com</span>
+                    <span><i class="fas fa-map-marker-alt"></i>22  Clinton Street, DSC 44</span>
                 </div>
                 <div class="d-flex align-items-center gap-3">
                     <span class="ttag"><i class="fas fa-fire me-1"></i>Free Delivery Today!</span>
@@ -54,7 +54,7 @@
         <div class="container">
             <a class="navbar-brand" href="#">
                 <div class="blogo">
-                   <img src="img/MY_LOGO.jpg" alt="my_logo" width="50">
+                   <img src="img/MY_LOGO.jpg" alt="my_logo" width="70">
                 </div>
             </a>
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
@@ -1052,9 +1052,9 @@
                 <div class="col-lg-8" data-aos="fade-left">
                     <div class="fcard">
                         <div class="row g-3">
-                            <div class="col-sm-6"><label class="flbl">Your Name *</label><input type="text" class="fctrl" placeholder="John Doe" /></div>
-                            <div class="col-sm-6"><label class="flbl">Email Address *</label><input type="email" class="fctrl" placeholder="you@email.com" /></div>
-                            <div class="col-sm-6"><label class="flbl">Phone Number</label><input type="tel" class="fctrl" placeholder="+1 (800) 000-0000" /></div>
+                            <div class="col-sm-6"><label class="flbl">Your Name *</label><input id="name" type="text" class="fctrl" placeholder="John Doe" /></div>
+                            <div class="col-sm-6"><label class="flbl">Email Address *</label><input id="email" type="email" class="fctrl" placeholder="you@email.com" /></div>
+                            <div class="col-sm-6"><label class="flbl">Phone Number</label><input id="phone-number" type="tel" class="fctrl" placeholder="+1 (800) 000-0000" /></div>
                             <div class="col-sm-6">
                                 <label class="flbl">Subject *</label>
                                 <select class="fctrl">
@@ -1065,8 +1065,8 @@
                               <option>Media &amp; Press</option>
                            </select>
                             </div>
-                            <div class="col-12"><label class="flbl">Message *</label><textarea class="fctrl" rows="5" placeholder="Write your message here..."></textarea></div>
-                            <div class="col-12"><button class="btn-red" id="ctcBtn"><i class="fas fa-paper-plane"></i>Send Message</button></div>
+                            <div class="col-12"><label class="flbl">Message *</label><textarea id="message" class="fctrl" rows="5" placeholder="Write your message here..."></textarea></div>
+                            <div class="col-12"><button class="btn-red" id="contactForm"><i class="fas fa-paper-plane"></i>Send Message</button></div>
                         </div>
                         <div class="sucmsg" id="ctcOk">
                             <i class="fas fa-check-circle"></i>
@@ -1163,6 +1163,33 @@
     <script src="js/jquery.magnific-popup.min.js"></script>
     <!-- Main js -->
     <script src="js/main.js"></script>
+    <script>
+    const form = document.getElementById("contactForm");
+
+    form.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const tel = document.getElementById("phone-number").value;
+    const message = document.getElementById("message").value;
+
+    // Replace with your WhatsApp number
+    const phoneNumber = "2348109807633";
+
+    const whatsappMessage =
+        `Hello, my name is ${name}%0A` +
+        `Email: ${email}%0A%0A` +
+        `Phone number: ${tel}%0A%0A` +
+        `Message:%0A${message}`;
+
+    const whatsappURL =
+        `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
+
+    window.open(whatsappURL, "_blank");
+    console.log(whatsappMessage)
+    });
+</script>
 </body>
 
 </html>
